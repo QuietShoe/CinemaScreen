@@ -1,0 +1,11 @@
+{
+  "Author": "Manner Schnitter",
+  "Name": "Mannerplexx Screen",
+  "Punchline": "A short one-liner that shows up in /xlplugins.",
+  "Description": "/pscreen",
+  "InternalName": "CinemaScreen",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "custom"
+  ]
+}
