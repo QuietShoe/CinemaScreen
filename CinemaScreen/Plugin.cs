@@ -5,7 +5,7 @@ using Dalamud.Plugin;
 using ImGuiNET;
 using System.Numerics;
 
-namespace SamplePlugin
+namespace CinemaScreen
 {
     public sealed class Plugin : IDalamudPlugin
     {
