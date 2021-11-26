@@ -3,6 +3,7 @@ using Dalamud.Game.Gui;
 using Dalamud.IoC;
 using Dalamud.Plugin;
 using ImGuiNET;
+using System;
 using System.Numerics;
 
 namespace CinemaScreen
@@ -25,6 +26,7 @@ namespace CinemaScreen
 
         private bool Visible = false;
         private bool SettingsVisible = false;
+        private ScreenWindow Screen;
 
         public Plugin() {
             Configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
@@ -44,10 +46,13 @@ namespace CinemaScreen
             CommandManager.RemoveHandler(CommandName);
         }
 
+        [STAThread]
         private void OnCommand(string command, string args)
         {
-            // in response to the slash command, just display our main ui
-            Visible = !Visible;
+            //Visible = !Visible;
+            //if (Screen == null) { Screen = new(); }
+            Screen = new();
+            Screen.Show();
         }
 
         private void ToggleConfig()
@@ -57,6 +62,12 @@ namespace CinemaScreen
 
         private void DrawUI()
         {
+            if (Screen != null)
+            {
+                float worldX = -1.5f;
+                GameGui.WorldToScreen(new Vector3(worldX, -2.4f, -4f), out Vector2 topleft);
+                Screen.Update(topleft);
+            }
             DrawScreen();
             DrawConfigUI();
         }

@@ -26,6 +26,16 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+	<ApplicationDefinition Update="App.xaml">
+	  <SubType>Designer</SubType>
+	</ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+	<Page Update="MainWindow.xaml">
+	  <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
 
   <PropertyGroup>
     <DalamudLibPath>$(AppData)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>

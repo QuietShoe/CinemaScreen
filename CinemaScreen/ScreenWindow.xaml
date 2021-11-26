@@ -1,0 +1,23 @@
+﻿<Window x:Class="CinemaScreen.ScreenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CinemaScreen"
+        mc:Ignorable="d"
+        Title="Screen" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0">X:</Label>
+        <TextBlock Name="screenX" Grid.Row="0" Grid.Column="1" Text="{Binding PosX}"/>
+        <Label Grid.Row="1" Grid.Column="0">Y:</Label>
+        <TextBlock Name="screenY" Grid.Row="1" Grid.Column="1" Text="{Binding PosY}"/>
+    </Grid>
+</Window>
