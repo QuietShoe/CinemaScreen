@@ -48,14 +48,7 @@ namespace CinemaScreen
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                ScreenPlayer.Play();
-            } catch (Exception ex)
-            {
-                Dalamud.Logging.PluginLog.Error(ex, "Error on play");
-            }
-            
+            ScreenPlayer.Play();
         }
 
         private void PauseButton_Click(object sender, RoutedEventArgs e)
