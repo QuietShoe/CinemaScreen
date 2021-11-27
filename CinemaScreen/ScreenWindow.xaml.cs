@@ -40,6 +40,33 @@ namespace CinemaScreen
             this.Left = screenPos.X * Ratio;
             this.Top = screenPos.Y * Ratio;
         }
+
+        private void Element_MediaEnded(object sender, EventArgs args)
+        {
+            ScreenPlayer.Stop();
+        }
+
+        private void PlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ScreenPlayer.Play();
+            } catch (Exception ex)
+            {
+                Dalamud.Logging.PluginLog.Error(ex, "Error on play");
+            }
+            
+        }
+
+        private void PauseButton_Click(object sender, RoutedEventArgs e)
+        {
+            ScreenPlayer.Pause();
+        }
+
+        private void StopButton_Click(object sender, RoutedEventArgs e)
+        {
+            ScreenPlayer.Stop();
+        }
     }
 
     class Position : INotifyPropertyChanged

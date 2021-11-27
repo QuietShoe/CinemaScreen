@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CinemaScreen"
         mc:Ignorable="d"
-        Title="Screen" Height="450" Width="800">
-    <Grid>
+        Title="Screen" Height="450" Width="800"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="CanMinimize"
+        IsEnabled="True"
+        WindowStyle="None">
+    <Canvas>
+        <MediaElement Name="ScreenPlayer"
+                      Source="file:///E:/Games stuff/FFXIV/ew-full-trailer.mp4"
+                      Width="800"
+                      Height="450"
+                      ClipToBounds="True"
+                      MediaEnded="Element_MediaEnded"
+                      LoadedBehavior="Pause"
+                      />
+        <StackPanel>
+            <Button Name="PlayButton" Click="PlayButton_Click">Play</Button>
+            <Button Name="PauseButton" Click="PauseButton_Click">Pause</Button>
+            <Button Name="StopButton" Click="StopButton_Click" >Stop</Button>
+        </StackPanel>
+    </Canvas>
+    
+    <!--Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -19,5 +40,6 @@
         <TextBlock Name="screenX" Grid.Row="0" Grid.Column="1" Text="{Binding PosX}"/>
         <Label Grid.Row="1" Grid.Column="0">Y:</Label>
         <TextBlock Name="screenY" Grid.Row="1" Grid.Column="1" Text="{Binding PosY}"/>
-    </Grid>
+      </Grid-->
+
 </Window>

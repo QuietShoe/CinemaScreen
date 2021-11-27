@@ -51,8 +51,14 @@ namespace CinemaScreen
         {
             //Visible = !Visible;
             //if (Screen == null) { Screen = new(); }
-            Screen = new();
-            Screen.Show();
+            try
+            {
+                Screen = new();
+                Screen.Show();
+            } catch (Exception ex)
+            {
+                Dalamud.Logging.PluginLog.Error(ex, "Error on screen load");
+            }
         }
 
         private void ToggleConfig()
